@@ -1,0 +1,67 @@
+/*==============================
+	Logo
+==============================*/
+header h1 a {
+	background: #ccc url("../img/logo.png");
+	border-radius: 150px;
+	display: block;
+	height: 150px;
+	left: 40px;
+	position: absolute;
+	width: 150px;
+}
+
+/*==============================
+	Navigation
+==============================*/
+header {
+	position: relative;
+}
+
+header li {
+	float: left;
+	list-style: none;
+	margin: 0 10px;
+}
+
+/* Remove inherited <UL> inherited */
+header ul {
+	margin: 0;
+}
+
+/* Push links far right w/o floats */
+nav li {
+	margin-left: 450px;
+}
+
+nav {
+	background: red;
+	height: 64px;
+	position: absolute;
+	left: 0;
+	top: 42px;
+	width: 960px;
+}
+
+nav a:link,
+nav a:visited {
+	background: green;
+	height: 64px;
+	display: block;
+	text-align: center;	
+	text-decoration: none;
+	text-transform: uppercase;
+	width: 128px;
+}
+
+nav a:hover, 
+nav a:active {
+
+}
+
+/*==============================
+	Navigation: Page Indicator 
+==============================*/
+
+
+
