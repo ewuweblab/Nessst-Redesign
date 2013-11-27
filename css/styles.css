@@ -12,9 +12,32 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'cantarellregular';
+    src: url('../fonts/Cantarell-Regular-webfont.eot');
+    src: url('../fonts/Cantarell-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/Cantarell-Regular-webfont.woff') format('woff'),
+         url('../fonts/Cantarell-Regular-webfont.ttf') format('truetype'),
+         url('../fonts/Cantarell-Regular-webfont.svg#cantarellregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 p {
+    font-family: 'cantarellregular', arial, sans-serif;
 	line-height: 24px;
 }
+
+/* Headings */
+.about h2,
+.students h2,
+.contact h2 {
+    font-family: 'diner-regularregular', arial, sans-serif;
+    font-size: 2.5em;
+    letter-spacing: 6px;
+}
+
 
 /*==============================
 	Structure & Layout 
@@ -73,12 +96,13 @@ header ul {
 
 /* Push links far right w/o floats */
 nav li:nth-child(1) {
-	margin-left: 450px;
+	margin-left: 378px;
 }
 
 nav {
 	background: #666;	
-	height: 64px;
+	border-radius: 10px 0 10px 0;
+    height: 64px;
 	position: absolute;
 	left: 0;
 	top: 42px;
@@ -91,21 +115,54 @@ nav {
 nav a:link,
 nav a:visited {
 	color: #fff;
+    font-family: 'cantarellregular', arial, sans-serif;
 	height: 64px;
 	display: block;
-	line-height: 64px;
+	line-height: 48px;
+    padding-left: 32px;
 	text-align: center;	
 	text-decoration: none;
 	text-transform: uppercase;
 	width: 128px;
 	
 	/*CSS 3*/
-	transition: margin-top .25s;
+	transition: all .25s;
 }
 
 nav a:hover, 
 nav a:active {
+    color: #00ccff;
 	margin-top: 10px;
+}
+
+/*==============================
+	Navigation: Sprite Map
+==============================*/
+/* About Link Off State*/
+nav li:nth-child(1) a:link {
+    background: url("../img/spritemap.png") no-repeat 0 0;
+}
+
+nav li:nth-child(1) a:hover {
+    background: url("../img/spritemap.png") no-repeat 0 -64px;
+}
+
+/* Students Link */
+nav li:nth-child(2) a:link {
+    background: url("../img/spritemap.png") no-repeat 0 -128px;
+}
+
+nav li:nth-child(2) a:hover {
+    background: url("../img/spritemap.png") no-repeat 0 -192px;
+}
+
+/* Contact Link */
+nav li:nth-child(3) a:link {
+    background: url("../img/spritemap.png") no-repeat 0 -256px;
+}
+
+nav li:nth-child(3) a:hover {
+    background: url("../img/spritemap.png") no-repeat 0 -320px;
 }
 
 
@@ -118,7 +175,6 @@ nav a:active {
 	background: rgba(255,255,255,.15);
 }
 
-
 /*==============================
 	About Page
 ==============================*/
@@ -129,9 +185,6 @@ nav a:active {
 }
 
 .about section h2 {
-    font-family: 'diner-regularregular', arial, sans-serif;
-    font-size: 2.5em;
-    letter-spacing: 2px;
     margin-left: -40px;
 }
 
@@ -146,30 +199,47 @@ nav a:active {
 	width: 440px;
 }
 
+/* Create Ribbons */
 .members h3 {
-	background: #666;
-	bottom: 20px;
-	color: #fff;
-	left: -20px;
-	padding: 10px;
+    background: #666;
+	bottom: 20px;    
+    color: #fff;
+    font-family: 'cantarellregular', arial, sans-serif;
+    padding: 10px;
 	position: absolute;
-	
+    	
 	/* CSS 3*/
 	box-shadow: 0 10px 20px #222;
 }
 
-/* Ribbon Triangle */
+/* Alternate Ribbons Left/Right */
+.members li:nth-child(odd) h3 {	
+	left: -20px;
+}
+
+.members li:nth-child(even) h3 {
+	right: 0px;
+}
+
+/* Create Ribbon Triangle */
 .members h3:after {
 	content: "";
 	position: absolute;
 	display: block;
-	left: 0;
 	border-style: solid;
 	border-color: #333 transparent transparent transparent;
-	bottom: -39px;
+	bottom: -40px;
 	border-width: 20px;
 	z-index: -1;
-	
+}
+
+/* Alternate Ribbons Left/Right */
+.members li:nth-child(odd) h3:after {	
+	left: 0;
+}
+
+.members li:nth-child(even) h3:after {
+	right: 0px;
 }
 
 .members img {
@@ -203,13 +273,13 @@ label {
 ==============================*/
 
 .gallery .control-button {
-  color: #ccc;
-  color: rgba(255, 255, 255, 0.4);
+  color: #00ccff;
+  color: rgba(0, 204, 255, 0.4);
 }
 
 .gallery .control-button:hover {
-  color: white;
-  color: rgba(255, 255, 255, 0.8);
+   color: #00ccff;
+  color: rgba(0, 204, 255, 1);
 }
 
 /*
