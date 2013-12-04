@@ -42,15 +42,68 @@ p {
 /*==============================
 	Structure & Layout 
 ==============================*/
-.container {
+.container,
+footer nav {
 	margin: 0 auto;
 	width: 960px;
 }
 
 /* Push down content below navigation */
 article {
-	padding-top: 200px;
+    background: rgba(255,255,255,.45);
+    float: left;
 }
+
+/* Push Carousel below navigation */
+.home article {
+    margin-top: 216px;
+}
+
+aside {
+    height: 290px;
+}
+
+aside h3 {
+    color: #fff;
+    font-family: arial, sans-serif;
+    text-transform: uppercase;
+    position: relative;
+    top: 133px;
+    left: -35%;
+    font-size: 18em;
+    font-weight: bold;
+    letter-spacing: -45px;
+    margin: 0;
+    opacity: .6;
+    width: 2000%;
+    z-index: -1;
+}
+
+/* Footer */
+footer {
+    border-top: 4px solid #00ccff;
+    float: left;
+    margin: 64px 0;
+    width: 100%;
+}
+
+footer nav li {
+    float: left;
+    list-style: none;
+    margin: 0 10px;
+}
+
+footer nav a:link,
+footer nav a:visited {
+    color: #666;
+    text-decoration: none;
+}
+
+footer nav a:hover,
+footer nav a:active {
+    color: #00ccff;
+}
+
 
 /*==============================
 	Logo
@@ -72,12 +125,12 @@ header h1 a {
 }
 
 header h1 a:hover {
-	background: #666 url("../img/logo.png") no-repeat center center;
+	background: #00ccff url("../img/logo.png") no-repeat center center;
 }
 
 
 /*==============================
-	Navigation
+	Main Navigation
 ==============================*/
 header {
 	position: relative;
@@ -95,11 +148,11 @@ header ul {
 }
 
 /* Push links far right w/o floats */
-nav li:nth-child(1) {
+header nav li:nth-child(1) {
 	margin-left: 378px;
 }
 
-nav {
+header nav {
 	background: #666;	
 	border-radius: 10px 0 10px 0;
     height: 64px;
@@ -112,13 +165,13 @@ nav {
 	box-shadow: inset 0px 0px 10px 2px #333;
 }
 
-nav a:link,
-nav a:visited {
+header nav a:link,
+header nav a:visited {
 	color: #fff;
     font-family: 'cantarellregular', arial, sans-serif;
 	height: 64px;
 	display: block;
-	line-height: 48px;
+	line-height: 64px;
     padding-left: 32px;
 	text-align: center;	
 	text-decoration: none;
@@ -126,11 +179,11 @@ nav a:visited {
 	width: 128px;
 	
 	/*CSS 3*/
-	transition: all .25s;
+	transition: color,margin-top .25s;
 }
 
-nav a:hover, 
-nav a:active {
+header nav a:hover, 
+header nav a:active {
     color: #00ccff;
 	margin-top: 10px;
 }
@@ -139,29 +192,29 @@ nav a:active {
 	Navigation: Sprite Map
 ==============================*/
 /* About Link Off State*/
-nav li:nth-child(1) a:link {
+header nav li:nth-child(1) a:link {
     background: url("../img/spritemap.png") no-repeat 0 0;
 }
 
-nav li:nth-child(1) a:hover {
+header nav li:nth-child(1) a:hover {
     background: url("../img/spritemap.png") no-repeat 0 -64px;
 }
 
 /* Students Link */
-nav li:nth-child(2) a:link {
+header nav li:nth-child(2) a:link {
     background: url("../img/spritemap.png") no-repeat 0 -128px;
 }
 
-nav li:nth-child(2) a:hover {
+header nav li:nth-child(2) a:hover {
     background: url("../img/spritemap.png") no-repeat 0 -192px;
 }
 
 /* Contact Link */
-nav li:nth-child(3) a:link {
+header nav li:nth-child(3) a:link {
     background: url("../img/spritemap.png") no-repeat 0 -256px;
 }
 
-nav li:nth-child(3) a:hover {
+header nav li:nth-child(3) a:hover {
     background: url("../img/spritemap.png") no-repeat 0 -320px;
 }
 
@@ -184,7 +237,8 @@ nav li:nth-child(3) a:hover {
 	width: 420px;
 }
 
-.about section h2 {
+.about section h2,
+{
     margin-left: -40px;
 }
 
@@ -268,13 +322,14 @@ label {
 	display: block;
 }
 
+
+
 /*==============================
 	Gallery Theme - Customize
 ==============================*/
-
-.gallery .control-button {
-  color: #00ccff;
-  color: rgba(0, 204, 255, 0.4);
+.gallery .control-operator:target ~ .controls .control-button {
+ color: #00ccff;
+  color: rgba(0, 204, 255, 1);
 }
 
 .gallery .control-button:hover {
@@ -282,9 +337,6 @@ label {
   color: rgba(0, 204, 255, 1);
 }
 
-/*
-	Theme controls how everything looks in Gallery CSS.
-*/
 .gallery {
   position: relative;
 }
@@ -294,17 +346,75 @@ label {
   text-align: center;
   background: #4d87e2;
 }
+
 .gallery .controls {
   position: absolute;
   bottom: 0;
   width: 100%;
   text-align: center;
 }
+
 .gallery .control-button {
   display: inline-block;
   margin: 0 .02em;
-  font-size: 3em;
+  font-size: 5em;
   text-align: center;
   text-decoration: none;
   transition: color .1s;
+}
+
+/*==============================
+	Widgets
+==============================*/
+.crazy-long-shadow {
+	   text-shadow: rgb(0, 204, 255) 1px 1px,
+    rgb(0, 204, 255) 2px 2px,
+    rgb(0, 204, 255) 3px 3px,
+    rgb(0, 204, 255) 4px 4px,
+    rgb(0, 204, 255) 5px 5px,
+    rgb(0, 204, 255) 6px 6px,
+    rgb(0, 204, 255) 7px 7px,
+    rgb(0, 204, 255) 8px 8px,
+    rgb(0, 204, 255) 9px 9px,
+    rgb(0, 204, 255) 10px 10px,
+    rgb(0, 204, 255) 11px 11px,
+    rgb(0, 204, 255) 12px 12px,
+    rgb(0, 204, 255) 13px 13px,
+    rgb(0, 204, 255) 14px 14px,
+    rgb(0, 204, 255) 15px 15px,
+    rgb(0, 204, 255) 16px 16px,
+    rgb(0, 204, 255) 17px 17px,
+    rgb(0, 204, 255) 18px 18px,
+    rgb(0, 204, 255) 19px 19px,
+    rgb(0, 204, 255) 20px 20px,
+    rgb(0, 204, 255) 21px 21px,
+    rgb(0, 204, 255) 22px 22px,
+    rgb(0, 204, 255) 23px 23px,
+    rgb(0, 204, 255) 24px 24px,
+    rgb(0, 204, 255) 25px 25px,
+    rgb(0, 204, 255) 26px 26px,
+    rgb(0, 204, 255) 27px 27px,
+    rgb(0, 204, 255) 28px 28px,
+    rgb(0, 204, 255) 29px 29px,
+    rgb(0, 204, 255) 30px 30px,
+    rgb(0, 204, 255) 31px 31px,
+    rgb(0, 204, 255) 32px 32px,
+    rgb(0, 204, 255) 33px 33px,
+    rgb(0, 204, 255) 34px 34px,
+    rgb(0, 204, 255) 35px 35px,
+    rgb(0, 204, 255) 36px 36px,
+    rgb(0, 204, 255) 37px 37px,
+    rgb(0, 204, 255) 38px 38px,
+    rgb(0, 204, 255) 39px 39px,
+    rgb(0, 204, 255) 40px 40px,
+    rgb(0, 204, 255) 41px 41px,
+    rgb(0, 204, 255) 42px 42px,
+    rgb(0, 204, 255) 43px 43px,
+    rgb(0, 204, 255) 44px 44px,
+    rgb(0, 204, 255) 45px 45px,
+    rgb(0, 204, 255) 46px 46px,
+    rgb(0, 204, 255) 47px 47px,
+    rgb(0, 204, 255) 48px 48px,
+    rgb(0, 204, 255) 49px 49px,
+    rgb(0, 204, 255) 50px 50px;
 }
